@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  color: #fff;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to bottom, #020917, #101725, norepeat);
+}
+
+head-bar-container {
+  height: 5vh;
+}
+
+file-tab {
+  height: 5vh;
+  width: 10vh;
+}
