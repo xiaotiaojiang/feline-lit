@@ -1,6 +1,0 @@
-ERROR [neovide::bridge::ui_commands] FocusLost failed
-
-Caused by:
-    0: Error decoding response to request 'nvim_ui_set_focus'
-    1: Error while reading from Reader
-    2: EOF

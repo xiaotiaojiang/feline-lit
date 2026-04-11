@@ -1,5 +1,5 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { css, html, LitElement } from 'lit';
+import { customElement } from 'lit/decorators.js';
 
 @customElement('head-bar-container')
 export class HeadBar extends LitElement {
@@ -25,8 +25,6 @@ export class HeadBar extends LitElement {
   `;
 
   render() {
-    return html`
-      <slot></slot>
-    `;
+    return html` <slot></slot> `;
   }
 }

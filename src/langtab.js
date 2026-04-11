@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
 @customElement('lang-tab')
@@ -158,63 +158,59 @@ export class LangTab extends LitElement {
   checked = false;
 
   @state()
-  private _isHovering = false;
+  _isHovering = false;
 
-  private _handleClick() {
+  _handleClick() {
     this.checked = !this.checked;
-    this.dispatchEvent(new CustomEvent('change', {
-      detail: { checked: this.checked },
-      bubbles: true,
-      composed: true
-    }));
+    this.dispatchEvent(
+      new CustomEvent('change', {
+        detail: { checked: this.checked },
+        bubbles: true,
+        composed: true,
+      }),
+    );
   }
 
-  private _handleMouseEnter() {
+  _handleMouseEnter() {
     this._isHovering = true;
   }
 
-  private _handleMouseLeave() {
+  _handleMouseLeave() {
     this._isHovering = false;
   }
-
-  private _createRipple(event: MouseEvent) {
-    const button = event.currentTarget as HTMLElement;
+  _createRipple(event) {
+    const button = event.currentTarget;
     const circle = document.createElement('span');
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
-
     circle.style.width = circle.style.height = `${diameter}px`;
     circle.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
     circle.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
     circle.classList.add('ripple');
-
     const ripple = button.getElementsByClassName('ripple')[0];
     if (ripple) {
       ripple.remove();
     }
-
     button.appendChild(circle);
   }
-
   render() {
     return html`
       <div class="container" 
            @mouseenter=${this._handleMouseEnter}
            @mouseleave=${this._handleMouseLeave}>
-        
         <input 
           type="checkbox" 
           class="checkbox" 
           id="filebtn" 
           .checked=${this.checked}
-          @change=${() => this.checked = !this.checked}>
+          @change=${() => (this.checked = !this.checked)}>
         
         <button 
           class="main-button ${this.checked ? 'checked' : ''} ${this._isHovering ? 'hovering' : ''}"
-          @click=${(e: MouseEvent) => {
-            this._handleClick();
-            this._createRipple(e);
-          }}
+          @click=${(e) => {
+        this._handleClick();
+        this._createRipple(e);
+      }}
           aria-expanded=${this.checked}
           aria-controls="menu">
           语言选项
