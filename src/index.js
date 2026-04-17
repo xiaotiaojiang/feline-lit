@@ -25,3 +25,13 @@ import('./toolbox.js').then((module) => {
     customElements.define('tool-box', module.ToolBox);
   }
 });
+import('./tb-classes.js').then((module) => {
+  if (!customElements.get('tb-classes')) {
+    customElements.define('tb-classes', module.ToolBoxClasses);
+  }
+});
+import('./tb-class.js').then((module) => {
+  if (!customElements.get('tb-class')) {
+    customElements.define('tb-class', module.ToolBoxClass);
+  }
+});

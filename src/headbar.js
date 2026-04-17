@@ -15,12 +15,14 @@ export class HeadBar extends LitElement {
       background-color: var(--top-bar-bg, rgba(21, 26, 40));
       border: 5px solid var(--top-bar-border, rgba(208, 208, 208, 0.8);
       border-radius: 5px;
+      overflow: hidden;
     }
     
     ::slotted(*) {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
   `;
 
