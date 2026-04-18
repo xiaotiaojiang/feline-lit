@@ -14,6 +14,13 @@ export class ToolBoxClasses extends LitElement {
       flex-direction: column;
       gap: 5px;
       padding: 8px 0;
+      display: inline-flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: 20%;
     }
 
     ::slotted(tb-class) {

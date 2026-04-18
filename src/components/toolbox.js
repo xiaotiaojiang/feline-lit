@@ -12,7 +12,6 @@ export class ToolBox extends LitElement {
     
     ::slotted(*) {
       display: inline-flex;
-      align-items: center;
     }
   `;
 
