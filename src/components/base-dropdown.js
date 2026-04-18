@@ -5,7 +5,7 @@ import { property, state } from 'lit/decorators.js';
 const dropdownStyles = css`
   :host {
     display: inline-block;
-    position: relative;
+    position: relative  ;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 

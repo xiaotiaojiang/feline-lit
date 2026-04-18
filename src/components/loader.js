@@ -29,18 +29,22 @@ const componentConfigs = [
     tagName: 'tb-class',
   },
 ];
-
-// 动态注册所有组件
-Promise.all(
-  componentConfigs.map(async (config) => {
+componentConfigs.forEach(async (config) => {
+  try {
     const module = await config.importFn();
-    const componentClass = module.default; // 获取默认导出的类
+    const componentClass = module.default;
 
-    if (componentClass && customElements.get(config.tagName) === undefined) {
+    if (componentClass && !customElements.get(config.tagName)) {
       customElements.define(config.tagName, componentClass);
-      console.log(`已注册自定义元素: <${config.tagName}>`);
+
+      // 添加 HMR 支持
+      if (import.meta.webpackHot) {
+        import.meta.webpackHot.accept(`./${config.tagName}.js`, () => {
+          console.log(`HMR updated: ${config.tagName}`);
+        });
+      }
     }
-  }),
-).catch((error) => {
-  console.error('组件加载失败:', error);
+  } catch (error) {
+    console.error(`Failed to load component ${config.tagName}:`, error);
+  }
 });

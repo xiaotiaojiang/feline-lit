@@ -42,6 +42,7 @@ export class ToolBoxClasses extends LitElement {
   private _handleChildClick(event: CustomEvent) {
     const { extensionID } = event.detail;
     this.focusedId = extensionID;
+    window.focusedID = extensionID;
 
     // 更新所有子组件的 isFocus 属性
     this.querySelectorAll('tb-class').forEach((child) => {
