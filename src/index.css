@@ -1,31 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   display: grid;
   margin: 0;
   color: #fff;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725, norepeat);
+  background: linear-gradient(to bottom, #020917, #101725);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 head-bar-container {
   height: 5vh;
+  width: 100%;
 }
 
-file-tab {
+file-tab,
+lang-tab {
   height: 5vh;
-  width: 10vh;
 }
 
 tool-box {
   width: 20vw;
-  height: 94vh;
+  height: calc(100vh - 5vh);
+}
 
-  tb-classes {
-    width: 5vh;
-    height: 94vh;
+tb-classes {
+  width: 100%;
+  height: 100%;
+}
 
-    tb-class {
-      width: 5vh;
-      height: 5vh;
-    }
-  }
+tb-class {
+  width: 5vh;
+  height: 5vh;
 }
