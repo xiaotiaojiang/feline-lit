@@ -28,6 +28,10 @@ const componentConfigs = [
     importFn: () => import('./tb-class.js'),
     tagName: 'tb-class',
   },
+  {
+    importFn: () => import('./block.js'),
+    tagName: 'fe-block',
+  },
 ];
 componentConfigs.forEach(async (config) => {
   try {
