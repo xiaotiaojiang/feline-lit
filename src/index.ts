@@ -1,2 +1,2 @@
 import './index.css';
-import './components/loader.js';
+import './components/loader.ts';

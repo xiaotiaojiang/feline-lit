@@ -5,9 +5,11 @@ export default class BlockContainer extends LitElement {
   styles = css`
   div {
     display: inline-grid;
+    gap: 10px;
   }
-  slotted::(block-group){
+  slotted::(*) {
     display: inline-flex;
+justify-self: stretch;
   }
 `;
   render() {
