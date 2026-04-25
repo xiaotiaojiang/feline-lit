@@ -9,13 +9,13 @@ export class ToolBox extends LitElement {
       background-color: var(--top-bar-bg, rgba(21, 26, 40));
       border: 1px solid rgba(30, 36, 50, 0.8); 
     }
+    .container {
+    display: inline-flex;
     
-    ::slotted(*) {
-      display: inline-flex;
     }
   `;
 
   render() {
-    return html`<slot></slot> `;
+    return html`<div class="container"><slot></slot></div> `;
   }
 }
