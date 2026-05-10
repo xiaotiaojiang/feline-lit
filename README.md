@@ -1,6 +1,6 @@
-# Rsbuild project
+# Feline The Modern Scratch Editor
 
-## Setup
+## Setup And Onboarding
 
 Install the dependencies:
 
@@ -8,15 +8,15 @@ Install the dependencies:
 pnpm install
 ```
 
-## Get started
+## Launch Feline
 
-Start the dev server, and the app will be available at [http://localhost:3000](http://localhost:3000).
+Start the dev server, and Feline will be available at [http://localhost:3000](http://localhost:3000).
 
 ```bash
 pnpm run dev
 ```
 
-Build the app for production:
+Build Feline for yourself or distribute Feline:
 
 ```bash
 pnpm run build
@@ -30,7 +30,4 @@ pnpm run preview
 
 ## Learn more
 
-To learn more about Rsbuild, check out the following resources:
-
-- [Rsbuild documentation](https://rsbuild.rs) - explore Rsbuild features and APIs.
-- [Rsbuild GitHub repository](https://github.com/web-infra-dev/rsbuild) - your feedback and contributions are welcome!
+We will draft a document for developers
